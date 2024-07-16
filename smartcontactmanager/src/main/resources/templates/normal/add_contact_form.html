@@ -33,7 +33,7 @@
 									</i>
 									</div>
 								</div>
-								<input type="text" id="firstName" name="name" placeholder="Enter your first nane here" class="form-control" />
+								<input type="text" id="firstName" required name="name" placeholder="Enter your first nane here" class="form-control" />
 						</div>
 						
 						<!-- Second Name -->
@@ -46,7 +46,7 @@
 									</i>
 									</div>
 								</div>
-								<input type="text" id="secondName" name="secondName" placeholder="Enter your second nane here" class="form-control" />
+								<input type="text" id="secondName" required name="secondName" placeholder="Enter your second nane here" class="form-control" />
 						</div>
 						
 						
@@ -60,7 +60,7 @@
 									</i>
 									</div>
 								</div>
-								<input type="number" id="phone" name="phone" placeholder="Enter phone Number here" class="form-control" />
+								<input required min="10" type="number" id="phone" name="phone" placeholder="Enter phone Number here" class="form-control" />
 						</div>
 						<!-- Email field -->
 						
@@ -70,7 +70,7 @@
 									@
 									</div>
 								</div>
-								<input type="email" id="email" name="email" placeholder="Enter Email` here" class="form-control" />
+								<input type="email"  required id="email" name="email" placeholder="Enter Email` here" class="form-control" />
 						</div>
 						
 						<!-- Work-Field -->
@@ -82,7 +82,7 @@
 									</i>
 									</div>
 								</div>
-								<input type="text" id="work" name="work" placeholder="Enter your Work here" class="form-control" />
+								<input type="text" required id="work" name="work" placeholder="Enter your Work here" class="form-control" />
 						</div>
 						
 						
@@ -90,7 +90,7 @@
 						
 							<div class="form-group mt-3">
 								
-								<textarea name="description" id="description" class="form-control" placeholder="Enter Description about contact"  rows="10"></textarea>	
+								<textarea id="textarea" name="description"  class="form-control" placeholder="Enter Description about contact"  rows="10"></textarea>	
 								
 								</div>
 								<!-- Contact Image -->
@@ -115,7 +115,14 @@
 		</div>
 
 		</div>
-
+		<script src="https://cdn.tiny.cloud/1/vtt2a0dbrb864q07351ei2yhuv83k3cy2u339b55ebywqgl4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+		 <script>
+  tinymce.init({
+    selector: 'textarea',
+   
+    
+  });
+</script>
 	</section>
 
 </body>
