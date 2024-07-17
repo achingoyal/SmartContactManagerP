@@ -45,7 +45,7 @@
 <a href=""  th:href="@{/user/index}" class="item"><i class="fa-solid fa-house"></i> Home</a>
 <a href="" th:href="@{/user/show-contacts/0}"  class="item"><i class="fa-solid fa-id-card-clip"></i> View Contacts</a>
 <a href="" th:href="@{/user/add-contact}" class="item"><i class="fa-solid fa-pencil"></i> Add Contact</a>
-<a href="" class="item"><i class="fa-solid fa-user"></i> Your Profile</a>
+<a href="" th:href="@{/user/profile}" class="item"><i class="fa-solid fa-user"></i> Your Profile</a>
 <a href="" class="item"><i class="fa-solid fa-gear"></i> Settings</a>
 <a href="" th:href="@{/logout}" class="item"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
 <div class="divider"></div>
@@ -72,7 +72,26 @@
 </div>
 <!-- End of Content Area -->
 
- 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+
+function deleteContact(cid){
+	swal({
+		  title: "Are you sure?",
+		  text: "You want to delete this contact",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((willDelete) => {
+		  if (willDelete) {
+		   window.location="/user/delete/"+ cid;
+		    }
+		   else {
+		    swal("Your Contact is safe !!");
+		  }
+		});
+}</script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+      </head>
+  <body>
+  <section>
+<div class="card mr-3 ml-3">
+			<div class="card-body">
+				<h1 class="text-center">Update Your Contact</h1>
+				<div class="container-fluid mt-1">
+
+					<div class="row">
+
+						<div class="col-md-8 offset-md-2">
+	
+							<form action="" th:object="${contact}"
+								 enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-update}"
+								class="mt-2">
+								
+								<input type="hidden" th:value="${contact.cId}" name="cId" />
+								<!-- First Name field -->
+								
+								<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+									<i class="fa fa-plus">
+									</i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.name}" id="firstName" required name="name" placeholder="Enter your first nane here" class="form-control" />
+						</div>
+						
+						<!-- Second Name -->
+						
+						
+								<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+									<i class="fas fa-user-alt">
+									</i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.secondName}"  id="secondName" required name="secondName" placeholder="Enter your second nane here" class="form-control" />
+						</div>
+						
+						
+						<!-- Phone Field -->
+						
+						
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+									<i class="fas fa-phone-alt">
+									</i>
+									</div>
+								</div>
+								<input required th:value="${contact.phone}" min="10" type="number" id="phone" name="phone" placeholder="Enter phone Number here" class="form-control" />
+						</div>
+						<!-- Email field -->
+						
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+									@
+									</div>
+								</div>
+								<input type="email" th:value="${contact.email}" required id="email" name="email" placeholder="Enter Email` here" class="form-control" />
+						</div>
+						
+						<!-- Work-Field -->
+						
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+									<i class="fas fa-briefcase">
+									</i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.work}" required id="work" name="work" placeholder="Enter your Work here" class="form-control" />
+						</div>
+						
+						
+						<!-- Description Field  -->
+						
+							<div class="form-group mt-3">
+								
+								<textarea id="textarea" th:text="${contact.description}" name="description"  class="form-control" placeholder="Enter Description about contact"  rows="20"></textarea>	
+								
+								</div>
+								
+								<div class="container text-center">
+								<img class="img-fluid my_profile_picture" style="height: 250px; width: 250px"src="" th:src="@{'/img/'+${contact.image}}" alt="" />
+								</div>
+								<!-- Contact Image -->
+								<p class="text-secondary">Choose new profile pic</p>
+								<div class="custom-file">
+								
+								 <input th:text="${contact.image}" type="file" name="profileImage" />
+								</div>
+								
+								<!-- Add contact button -->
+								
+								<div class="container text-center">
+								<button  class="btn btn-outline-primary">Update Contact</button>
+								</div>
+						</form>
+
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+		</div>
+	
+<script src="https://cdn.tiny.cloud/1/vtt2a0dbrb864q07351ei2yhuv83k3cy2u339b55ebywqgl4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+		 <script>
+  tinymce.init({
+    selector: 'textarea',
+   
+    
+  });
+</script>
+  </section>
+   
+    </body>
+</html>
