@@ -20,7 +20,7 @@
 						<span th:text="${contact.name}"></span> <span
 							th:text="${contact.secondName}"></span>
 					</h3>
-					<table class="table">
+					<div class="table-responsive"><table class="table">
 						<thead>
 							<tr>
 								<th scope="col">#ID</th>
@@ -48,7 +48,7 @@
 
 						</tbody>
 
-					</table>
+					</table></div>
 					<div class="description text-center">
 						<th:block th:utext="${contact.description}"></th:block>
 					</div>
